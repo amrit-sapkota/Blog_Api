@@ -16,7 +16,7 @@ router.get("/:id", postController.show);
 
 //to update an existing post
 
-router.patch("/:id", postController.update);
+router.patch("/:id", checkAuthMiddleware.checkAuth, postController.update);
 
 // to delte and existing post
 router.delete("/:id", postController.destroy);
